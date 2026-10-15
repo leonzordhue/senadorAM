@@ -1,0 +1,24 @@
+pessoa_id,cargo,uf,cod_ibge,inicio,fim,origem,observacao,fonte
+7a559dfaf7,senador,AM,,1995-02-01,2003-01-31,eleição,mandato 01/02/1995 a 31/01/2003 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/9/mandatos
+00dfabea06,senador,AM,,2004-11-23,2005-03-30,posse de suplente,mandato 01/02/1999 a 31/01/2007 (2º Suplente); afastamento: Retorno do titular,https://legis.senado.leg.br/dadosabertos/senador/29/mandatos
+00dfabea06,senador,AM,,1992-12-31,1999-01-31,posse de suplente,mandato 01/02/1991 a 31/01/1999 (1º Suplente); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/29/mandatos
+8204040c33,senador,AM,,2003-02-01,2008-05-23,eleição,mandato 01/02/2003 a 31/01/2011 (Titular); afastamento: Falecimento,https://legis.senado.leg.br/dadosabertos/senador/36/mandatos
+8204040c33,senador,AM,,1995-02-01,2003-01-31,eleição,mandato 01/02/1995 a 31/01/2003 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/36/mandatos
+18900a8ebf,senador,AM,,2003-02-01,2011-01-31,eleição,mandato 01/02/2003 a 31/01/2011 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/551/mandatos
+0fca387a24,senador,AM,,2011-02-01,2019-01-31,eleição,mandato 01/02/2011 a 31/01/2019 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/558/mandatos
+1eb598a683,senador,AM,,2005-03-31,2007-01-31,eleição,mandato 01/02/1999 a 31/01/2007 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/944/mandatos
+1eb598a683,senador,AM,,1999-02-01,2004-11-17,eleição,mandato 01/02/1999 a 31/01/2007 (Titular); afastamento: Licença saúde,https://legis.senado.leg.br/dadosabertos/senador/944/mandatos
+6ceee451e2,senador,AM,,2004-11-18,2004-11-22,posse de suplente,mandato 01/02/1999 a 31/01/2007 (1º Suplente); afastamento: Licença Particular,https://legis.senado.leg.br/dadosabertos/senador/1089/mandatos
+9fe1f93f9a,senador,AM,,2011-07-08,2015-01-31,eleição,mandato 01/02/2007 a 31/01/2015 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/4527/mandatos
+9fe1f93f9a,senador,AM,,2010-04-01,2010-12-31,eleição,mandato 01/02/2007 a 31/01/2015 (Titular); afastamento: Afastamento do exercício,https://legis.senado.leg.br/dadosabertos/senador/4527/mandatos
+9fe1f93f9a,senador,AM,,2007-02-01,2007-03-29,eleição,mandato 01/02/2007 a 31/01/2015 (Titular); afastamento: Afastamento do exercício,https://legis.senado.leg.br/dadosabertos/senador/4527/mandatos
+2f4f5a4e8f,senador,AM,,2011-01-06,2011-07-07,posse de suplente,mandato 01/02/2007 a 31/01/2015 (1º Suplente); afastamento: Retorno do titular,https://legis.senado.leg.br/dadosabertos/senador/4774/mandatos
+2f4f5a4e8f,senador,AM,,2007-04-03,2010-03-31,posse de suplente,mandato 01/02/2007 a 31/01/2015 (1º Suplente); afastamento: Retorno do titular,https://legis.senado.leg.br/dadosabertos/senador/4774/mandatos
+d5bac48731,senador,AM,,2008-06-03,2011-01-31,posse de suplente,mandato 01/02/2003 a 31/01/2011 (1º Suplente); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/4792/mandatos
+17786586b1,senador,AM,,2019-02-01,,eleição,mandato 01/02/2019 a 31/01/2027 (Titular); em exercício,https://legis.senado.leg.br/dadosabertos/senador/4994/mandatos
+17786586b1,senador,AM,,2016-04-22,2019-01-31,eleição,mandato 01/02/2011 a 31/01/2019 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/4994/mandatos
+17786586b1,senador,AM,,2011-02-01,2015-01-01,eleição,mandato 01/02/2011 a 31/01/2019 (Titular); afastamento: Afastamento do exercício,https://legis.senado.leg.br/dadosabertos/senador/4994/mandatos
+88311017a9,senador,AM,,2015-01-01,2016-04-22,posse de suplente,mandato 01/02/2011 a 31/01/2019 (1º Suplente); afastamento: Retorno do titular,https://legis.senado.leg.br/dadosabertos/senador/5038/mandatos
+a11ae3b00a,senador,AM,,2019-02-01,,eleição,mandato 01/02/2019 a 31/01/2027 (Titular); em exercício,https://legis.senado.leg.br/dadosabertos/senador/5502/mandatos
+2ee227c57a,senador,AM,,2023-02-01,,eleição,mandato 01/02/2023 a 31/01/2031 (Titular); em exercício,https://legis.senado.leg.br/dadosabertos/senador/5525/mandatos
+2ee227c57a,senador,AM,,2015-02-01,2023-01-31,eleição,mandato 01/02/2015 a 31/01/2023 (Titular); afastamento: Término do mandato,https://legis.senado.leg.br/dadosabertos/senador/5525/mandatos
