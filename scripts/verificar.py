@@ -6,6 +6,7 @@ Testes:
   3. Normas: cada lei citada existe na base do Planalto (ctresb/leis) com a mesma data.
   4. Votos: registro do senador no endpoint novo (/votacao) × endpoint antigo (/senador/{cod}/votacoes).
   5. CEAPS: todo senador em exercício de 2008 em diante tem despesas nos anos de exercício (casamento de nomes).
+  5b. CEAPS: soma por senador e ano (planilha) = API administrativa do Senado (amostra de anos).
   6. Emendas: autores casados aplicam no AM (sem homônimo) e lista para conferência humana.
 Uso: python -I scripts/verificar.py
 """
@@ -118,6 +119,27 @@ if sem:
     aviso("5. CEAPS: senadores sem despesa nos anos de exercício", "; ".join(sem) + ". Pode ser nome diferente na planilha ou exercício curto.")
 else:
     ok("5. CEAPS: casamento de nomes", True, "todos os senadores em exercício desde 2009 têm despesas")
+
+# 5b: soma por senador e ano (planilha) × API administrativa do Senado (adm.senado.gov.br), anos de amostra
+import urllib.request  # noqa: E402
+soma = defaultdict(float)
+for r in csv.DictReader(open(p, encoding="utf-8", newline="")):
+    v = r["valor"]
+    soma[(r["codigo"], r["ano"])] += float(v.replace(".", "").replace(",", ".")) if "," in v else float(v or 0)
+div, n5 = [], 0
+for ano in ("2012", "2018", "2024"):
+    j = json.load(urllib.request.urlopen(urllib.request.Request(
+        f"https://adm.senado.gov.br/adm-dadosabertos/api/v1/senadores/despesas_ceaps/{ano}",
+        headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"}), timeout=300))
+    api_s = defaultdict(float)
+    for x in j:
+        api_s[str(x.get("codSenador"))] += float(x.get("valorReembolsado") or 0)
+    for (c, a), v in soma.items():
+        if a == ano:
+            n5 += 1
+            if abs(api_s[c] - v) > 1:
+                div.append(f"{S[c]['nome']} {ano}: planilha {v:.2f} × API {api_s[c]:.2f}")
+ok("5b. CEAPS: planilha × API administrativa do Senado", not div, f"{n5} senador-ano conferidos" + ("; " + "; ".join(div) if div else ", todos iguais"))
 
 # 6
 m = ler_json("emendas_autores.json")

@@ -1,6 +1,6 @@
 # Verificação de integridade
 
-Executada em 15/10/2026 17:01 por `scripts/verificar.py`.
+Executada em 15/10/2026 17:50 por `scripts/verificar.py`.
 
 | Teste | Resultado | Detalhe |
 |---|---|---|
@@ -9,5 +9,6 @@ Executada em 15/10/2026 17:01 por `scripts/verificar.py`.
 | 3. Leis conferidas na base do Planalto | ✅ | 19 leis; todas existem com a mesma data |
 | 4. Votos: endpoint novo × antigo | ✅ | 10012 votos em comum, todos iguais |
 | 5. CEAPS: casamento de nomes | ✅ | todos os senadores em exercício desde 2009 têm despesas |
+| 5b. CEAPS: planilha × API administrativa do Senado | ✅ | 9 senador-ano conferidos, todos iguais |
 | 6a. Emendas: autores aplicam no AM (sem homônimo) | ✅ | 7 autores, todos com ≥50% no AM ou nacional |
 | 6b. Emendas: autores casados por nome (conferir) | ⚠️ | ALFREDO NASCIMENTO (cód. 2637) → Alfredo Nascimento; EDUARDO BRAGA (cód. 2909) → Eduardo Braga; VANESSA GRAZZIOTIN (cód. 2910) → Vanessa Grazziotin; ALFREDO NASCIMENTO (cód. 3807) → Alfredo Nascimento; OMAR AZIZ (cód. 3794) → Omar Aziz; SANDRA BRAGA (cód. 3802) → Sandra Braga; PLINIO VALERIO (cód. 4137) → Plínio Valério |
