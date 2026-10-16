@@ -1,5 +1,7 @@
 # João Thomé Mestrinho
 
+<img src="../fotos/6ceee451e2.jpg" width="110" align="right">
+
 | Campo | Dado |
 |---|---|
 | Nome completo | João Thomé Verçosa de Medeiros Raposo |
@@ -114,4 +116,4 @@ Empenhado: **R$ 0,00** · pago: **R$ 0,00**.
 
 
 ---
-Fontes: Senado Federal (Dados Abertos: senador, mandatos, autorias, processo, votação, discursos; CEAPS), Portal da Transparência/CGU (emendas). Gerado em 15/10/2026 por `scripts/gerar.py`. Método e limites em [METODOLOGIA.md](../METODOLOGIA.md); verificação em [VERIFICACAO.md](../VERIFICACAO.md).
+Fontes: Senado Federal (Dados Abertos: senador, mandatos, autorias, processo, votação, discursos; CEAPS), Portal da Transparência/CGU (emendas). Gerado em 16/10/2026 por `scripts/gerar.py`. Método e limites em [METODOLOGIA.md](../METODOLOGIA.md); verificação em [VERIFICACAO.md](../VERIFICACAO.md).

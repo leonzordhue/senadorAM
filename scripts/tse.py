@@ -250,9 +250,24 @@ def main():
                 img = Image.open(io.BytesIO(abrir(x["foto"].replace("http://", "https://")).read())).convert("RGB")
                 img.thumbnail((240, 10000)); img.save(destino, "JPEG", quality=80)
             except Exception as e:
-                alertas.append(f"{x['nome']}: foto não baixada ({e})")
+                alertas.append(f"{x['nome']}: foto oficial ({SISTEMA}) não baixada ({e}); tentada a do TSE")
+        fonte = x.get("foto") or ""
+        # sem foto da Casa: a da candidatura mais recente no TSE (foto_cand<ano>_AM_div.zip, membro AM<sq>_div.jpg)
+        for l in sorted((l for l in linhas if l["pessoa_id"] == p), key=lambda l: l["ano"], reverse=True):
+            if os.path.exists(destino):
+                break
+            url = f"https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes{l['ano']}/fotos/foto_cand{l['ano']}_AM_div.zip"
+            try:
+                z = zipfile.ZipFile(HttpArquivo(url))
+                m = next((n for n in z.namelist() if re.fullmatch(rf"F?AM{l['sq_candidato']}_div\.jpe?g", n, re.I)), None)
+                if m:
+                    img = Image.open(io.BytesIO(z.read(m))).convert("RGB")
+                    img.thumbnail((240, 10000)); img.save(destino, "JPEG", quality=80)
+                    fonte = f"{url}#{m}"
+            except Exception as e:
+                alertas.append(f"{x['nome']}: foto do TSE {l['ano']} não baixada ({e})")
         pessoas[p]["foto"] = f"fotos/{p}.jpg" if os.path.exists(destino) else ""
-        pessoas[p]["foto_fonte"] = x.get("foto") or ""
+        pessoas[p]["foto_fonte"] = fonte
     for l in linhas:
         idents.append(dict(pessoa_id=l["pessoa_id"], sistema="tse_sq", valor=l["sq_candidato"], ano=l["ano"], ligacao="titulo"))
     idents = list({tuple(i.values()): i for i in idents}.values())

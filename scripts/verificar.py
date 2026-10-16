@@ -2,7 +2,7 @@
 
 Testes:
   1. Downloads completos (CEAPS, emendas): bytes recebidos = Content-Length.
-  2. Autorias: matérias da API antiga (/senador/{cod}/autorias) × API nova (/processo?codigoParlamentarAutor).
+  2. Autorias: matérias da API antiga (/senador/{cod}/autorias) ⊆ API nova (/processo?codigoParlamentarAutor); extras só institucionais.
   3. Normas: cada lei citada existe na base do Planalto (ctresb/leis) com a mesma data.
   4. Votos: registro do senador no endpoint novo (/votacao) × endpoint antigo (/senador/{cod}/votacoes).
   5. CEAPS: todo senador em exercício de 2008 em diante tem despesas nos anos de exercício (casamento de nomes).
@@ -44,18 +44,21 @@ ok("1. Downloads completos", not ruins, f"{n} arquivos com bytes = Content-Lengt
 
 # 2
 aut = ler_json("autorias.json")
-div = []
+div, inst = [], 0
 for c, s in S.items():
     novo = api(f"processo?codigoParlamentarAutor={c}") or []
     a = {str(i["codigo_materia"]) for i in aut.get(c, [])}
     b = {str(x.get("codigoMateria")) for x in novo if x.get("codigoMateria")}
-    if a != b:
-        div.append(f"{s['nome']}: antiga {len(a)} × nova {len(b)} (só na antiga {len(a - b)}, só na nova {len(b - a)})")
-if div:
-    aviso("2. Autorias: API antiga × API nova", "; ".join(div) + ". A API nova inclui matérias em que o senador é coautor sem constar "
-          "da lista antiga e vice-versa; os dossiês usam a lista antiga, que diz quem é o 1º autor.")
-else:
-    ok("2. Autorias: API antiga × API nova", True, f"{len(S)} senadores com o mesmo conjunto de matérias")
+    # a API nova também devolve a fase seguinte de matéria do senador vinda de outro órgão (PEC fase 2, substitutivo
+    # da Câmara, veto da Presidência, PLC de quando era deputado): autoria institucional, não é autoria do senador.
+    extras = [x for x in novo if str(x.get("codigoMateria")) in b - a]
+    outros = [x for x in extras if x.get("autoria") not in ("Câmara dos Deputados", "Presidência da República")]
+    inst += len(extras) - len(outros)
+    if a - b or outros:
+        div.append(f"{s['nome']}: só na antiga {len(a - b)}, só na nova sem autoria institucional {len(outros)}")
+ok("2. Autorias: API antiga × API nova", not div, "; ".join(div) if div else
+   f"{len(S)} senadores: toda matéria da lista antiga está na nova; as {inst} a mais na nova são de autoria institucional "
+   "(Câmara dos Deputados ou Presidência: fase 2 de PEC, substitutivo, veto) e ficam fora dos dossiês")
 
 # 3
 falta, nleis = [], 0

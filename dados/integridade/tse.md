@@ -1,4 +1,4 @@
-# Integridade: ligação ao TSE (2026-10-15)
+# Integridade: ligação ao TSE (2026-10-16)
 
 ## Passou
 - 14 parlamentares; 14 ligados ao TSE (14 por nome+nascimento, 0 só por nome)
@@ -9,4 +9,4 @@
 - nada
 
 ## Alertas (verificação humana)
-- João Thomé Mestrinho: foto não baixada ('NoneType' object has no attribute 'read')
+- nenhum

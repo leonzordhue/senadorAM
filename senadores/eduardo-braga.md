@@ -42,7 +42,7 @@ Identificador comum da plataforma: `pessoa_id 17786586b1`. Cargos municipais (pr
 
 | Indicador | 54ª (2011–2015) | 55ª (2015–2019) | 56ª (2019–2023) | 57ª (2023–2027) |
 |---|---|---|---|---|
-| Dias em exercício | 1431 | 1015 | 1461 | 1353 |
+| Dias em exercício | 1431 | 1015 | 1461 | 1354 |
 | Matérias apresentadas (todos os tipos) | 274 | 107 | 565 | 188 |
 | Projetos e PECs como 1º autor | 24 | 14 | 39 | 29 |
 | Requerimentos | 195 | 67 | 452 | 142 |
@@ -388,4 +388,4 @@ Foi titular de 113 comissões, entre elas: CAE, CAESTN, CAS, CCAI, CCJ, CCJSSP, 
 
 
 ---
-Fontes: Senado Federal (Dados Abertos: senador, mandatos, autorias, processo, votação, discursos; CEAPS), Portal da Transparência/CGU (emendas). Gerado em 15/10/2026 por `scripts/gerar.py`. Método e limites em [METODOLOGIA.md](../METODOLOGIA.md); verificação em [VERIFICACAO.md](../VERIFICACAO.md).
+Fontes: Senado Federal (Dados Abertos: senador, mandatos, autorias, processo, votação, discursos; CEAPS), Portal da Transparência/CGU (emendas). Gerado em 16/10/2026 por `scripts/gerar.py`. Método e limites em [METODOLOGIA.md](../METODOLOGIA.md); verificação em [VERIFICACAO.md](../VERIFICACAO.md).
